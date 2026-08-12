@@ -1,0 +1,187 @@
+* {
+box-sizing: border-box;
+}
+:root {
+--adjustX: 50px;
+--adjustY: 0px;
+--adjustFontSize: 19;
+--glowBlue: 0 0 30px #008fd6, 0 0 100px #008fd6;
+--glowLightBlue: 0 0 30px rgb(84, 84, 216, .8);
+--glowWhite: 0 0 30px rgba(255, 255, 255, .3);
+--glowRed: 0 0 30px #aa0000, 0 0 100px #aa0000;
+--glowPink: 0 0 30px #ff8cd3, 0 0 100px #ff8cd3;
+--glowYellow: 0 0 30px #dddd00, 0 0 100px #dddd00;
+--glowOff: none;
+--borderThickness: 0px;
+}
+body {
+display: flex;
+justify-content:center;
+align-items: center;
+flex-flow: column nowrap;
+margin: 0;
+padding: 0;
+background-color: #111;
+height: 100vh;
+color: white;
+font-family: 'arial', sans-serif;
+font-weight: bold;
+font-size: 2em;
+}
+.outer-container {
+display: flex;
+justify-content: center;
+align-items: center;
+border: var(--borderThickness) dashed orange;
+width: 98%;
+height: 98%;
+margin: 0px;
+flex-direction: column;
+}
+.inner-container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-flow: row nowrap;
+border: var(--borderThickness) dashed white;
+width: 100%;
+height: 100%;
+}
+#top-div {
+width: 100%;
+height: 50px;
+display: flex;
+justify-content: space-around;
+border: var(--borderThickness) solid blue;
+padding: 0 20px 0 20px;
+}
+#bottom-div {
+width: 100%;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: var(--borderThickness) solid blue;
+padding: 0 20px 0 20px;
+}
+#fullscreen-toggle {
+display: flex;
+justify-content: center;
+align-items: center;
+/* width: 70px; */
+height: 50px;
+cursor: pointer;
+border: var(--borderThickness) solid yellow;
+}
+.custom-button {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 20%;
+border:  var(--borderThickness) solid yellow;
+}
+/* #clock-container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+border: var(--borderThickness) solid green;
+} */
+.clock-grid {
+border: var(--borderThickness) solid red;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-flow: column nowrap;
+width: 100%;
+position: relative;
+}
+#character-grid {
+border: var(--borderThickness) solid green;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-flow: column nowrap;
+width: 100%;
+position: absolute;
+top: 0px;
+right: 0px;
+left: 0px;
+bottom: 0px;
+}
+.pixel-row {
+display: flex;
+flex-direction: row;
+align-items: stretch;
+border: var(--borderThickness) dashed white;
+width: 100%;
+/* height: 50px; */
+}
+.pixel {
+border: 2px solid rgba(30, 30, 30);
+width: calc(100% / 32);
+height: 30px;
+background-image: url('./light-60.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+/* box-shadow: inset 0 0 .5vw .5vw rgba(0, 0, 0, 0.4); */
+}
+.pixel-blank {
+background-color: rgba(0, 0, 0, 0);
+}
+.pixel-white {
+background-color: #ffffff;
+/* box-shadow: inset 0 0 10px #000000, var(--glowWhite); */
+/* box-shadow: var(--glowWhite); */
+}
+.pixel-red {
+background-color: #ff0000;
+/* box-shadow: var(--glowRed); */
+}
+.pixel-pink {
+background-color: #ffb8ff;
+/* box-shadow: var(--glowPink); */
+}
+.pixel-cyan {
+background-color: #00ffff;
+}
+.pixel-orange {
+background-color: #ffb852;
+}
+.pixel-blue {
+background-color: #0000ff;
+/* box-shadow: var(--glowBlue); */
+}
+.pixel-frightened {
+background-color: #283cff;
+}
+.pixel-yellow {
+background-color: #ffff00;
+/* box-shadow: var(--glowYellow); */
+}
+.pixel-colon {
+background-color: #5454d8;
+/* box-shadow: var(--glowLightBlue); */
+animation: colonBlinker 1s steps(1) infinite;
+z-index: -10;
+}
+@keyframes colonBlinker {
+0% {opacity: 1;}
+50% {opacity: 0;}
+100% {opacity: 1;}
+}
+
+/* --- Texture toggle button (全画面ボタンの隣) --- */
+#texture-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+    border: var(--borderThickness) solid yellow;
+}
+/* body に no-texture が付くと各マスの背景画像(にじみ)を消す */
+body.no-texture .pixel {
+    background-image: none;
+}
