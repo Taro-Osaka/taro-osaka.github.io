@@ -1,5 +1,4 @@
 # Retro_Clock PAC-MAN
-Pac-Man Clock
 
 ドット絵のマトリクスパネル上に現在時刻を表示し、Pac-Man とゴーストたちがその上を走り抜ける、レトロ風のデジタル時計です。純粋な HTML / CSS / JavaScript のみで動作し、ライブラリやビルド環境は不要です。
 
