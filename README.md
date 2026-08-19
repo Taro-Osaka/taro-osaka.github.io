@@ -8,7 +8,7 @@
 
 ## 📸 スクリーンショット
 
-![Pac-Man Clock の表示例](./Retro Clock.png)
+<img src="./Retro%20Clock.png" alt="Pac-Man Clock の表示例" width="400">
 
 ## ✨ 特徴
 
@@ -96,4 +96,4 @@ var digitTransitionDuration = 720; // 数字切り替えアニメの所要時間
 
 ## 📄 ライセンス
 
-プロジェクトの利用条件に合わせて記載してください（例: MIT License）。
+
